@@ -2,7 +2,7 @@
  Leetcode solutions for Jr. Application Developer STDT4 (HS # 9534690) online LeetCode problems.
 
 Acceptance for Jump Game:
-![Jump Game solution screenshot on LeetCode](https://github.com/sathvikparasa/JrAppDevOA/blob/main/JumpGame_solution_acceptance.png?raw=true)
+![Jump Game solution screenshot on LeetCode](https://github.com/sathvikparasa/JrAppDev/blob/main/OA/JumpGame_solution_acceptance.png)
 
 Acceptance for Set Matrix Zeroes:
-![Set Matrix Zeroes solution screenshot on Leetcode](https://github.com/sathvikparasa/JrAppDevOA/blob/main/SetMatrixZeroes_solution_acceptance.png?raw=true)
+![Set Matrix Zeroes solution screenshot on Leetcode](https://github.com/sathvikparasa/JrAppDev/blob/main/OA/SetMatrixZeroes_solution_acceptance.png?raw=true)
