@@ -1,3 +1,5 @@
 .gitattributes
-.venv*.local
-.venv
+.env*.local
+.env
+/project/.env
+__pycache__

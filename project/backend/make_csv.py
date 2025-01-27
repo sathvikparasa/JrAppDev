@@ -7,7 +7,7 @@ import csv
 fake = faker.Faker()
 
 # Headers for csv file
-headers = ["Id, First_Name, Last_Name, Email, Salary"]
+headers = ["Id", "First_Name", "Last_Name", "Email", "Salary"]
 
 # Create data.csv file and write to it
 with open('persons.csv', 'w', newline='') as file:
@@ -29,7 +29,7 @@ with open('persons.csv', 'w', newline='') as file:
             last = name[2]
 
         # Email is the first letter of first name + last name + @gmail.com
-        email = first.lower() + last.lower() + '@gmail.com'
+        email = first.lower() + last.lower() + '@example.com'
         
         # Salary is random float from $0 to $1,000,000
         salary = f"{round(random.uniform(0, 1000000), 2):.2f}"
