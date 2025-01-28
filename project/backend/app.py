@@ -1,8 +1,10 @@
 import os
 from flask import Flask, jsonify
+from flask_cors import CORS
 import csv
 
 app = Flask(__name__)
+CORS(app)
 
 # List of already seen UUIDs
 seen_ids = []

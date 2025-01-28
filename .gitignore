@@ -1,5 +1,4 @@
 .gitattributes
 .env*.local
 .env
-/project/.env
 __pycache__
