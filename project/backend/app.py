@@ -4,11 +4,14 @@ from flask_cors import CORS
 import csv
 
 app = Flask(__name__)
+# Add cross origin resource sharing for Nextjs frontend
 CORS(app)
 
 # List of already seen UUIDs
 seen_ids = []
-data = []
+
+# Store json data in this list
+persons_list = []
 
 def validate_row(row):
     # Validate non-empty unique UUID v4
@@ -33,27 +36,34 @@ def csv_json():
     with open('persons.csv', 'r', newline='') as file:
         reader = csv.DictReader(file)
         for row in reader:
+            # If row is not valid, skip it
             if(validate_row(row)):
                 row["Salary"] = float(row["Salary"])
-                data.append(row)
-            else:
-                data.append("ERROR APPENDING ROW. INVALID FIELD.")
+                persons_list.append(row)
 
 @app.route("/persons", methods=["GET"])
 def persons():
+    # Load data and hold it in json format / list of dictionaries
     csv_json()
-    return jsonify(data[:10])
+    # Return first 10 people
+    return jsonify(persons_list[:10])
 
 @app.route("/persons/<user_id>", methods=["GET"])
 def find_person(user_id):
-    if not data:
+    if not persons_list:
+        # If user has not gone to /persons before this route,
+        # Load the data
         csv_json()
     
-    for person in data:
+    # Iterate over all the persons to find the matching [id]
+    # Only 100 values so O(n) isn't too big a concern
+    for person in persons_list:
         if person["Id"] == user_id:
             return jsonify(person)
-        
-    return jsonify(f"Person with UUID {user_id} not found.")
+
+    # Error handling    
+    return jsonify(404, "Person not found")
 
 if __name__ == '__main__':
+    # Listening on port 8080
     app.run(debug=True, port=8080)
