@@ -6,7 +6,7 @@ export default function Persons() {
     const [persons, setPersons] = useState([]);
 
     useEffect(() => {
-        fetch("http://127.0.0.1:8080/persons")
+        fetch("https://jrappdev.onrender.com/persons")
         .then((response) => {
             if (!response.ok) {
               redirect("/error")
