@@ -1,5 +1,5 @@
 import os
-from flask import Flask, jsonify
+from flask import Flask, jsonify, redirect
 from flask_cors import CORS
 import csv
 
@@ -40,6 +40,10 @@ def csv_json():
             if(validate_row(row)):
                 row["Salary"] = float(row["Salary"])
                 persons_list.append(row)
+
+@app.route("/", methods=["GET"])
+def index():
+    return redirect("/persons")
 
 @app.route("/persons", methods=["GET"])
 def persons():
