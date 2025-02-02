@@ -12,7 +12,7 @@ export default function Person()
 
     useEffect(() => {
         if (id) {
-          fetch(`http://127.0.0.1:8080/persons/${id}`)
+          fetch(`https://jrappdev.onrender.com/persons/${id}`)
             .then((response) => {
               if (!response.ok) {
                 router.push('/error')
