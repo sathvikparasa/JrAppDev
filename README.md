@@ -36,10 +36,12 @@ This folder contains the code to the project for phase 2 of the application proc
   pip install -r requirements.txt
   ```
   Then run the application.
+  Method 1: python3 command
   ```
   python3 app.py
   ```
-  If using the command `flask run`, set the flask environment variable to port 8080 before (if you want to communicate with frontend).
+  Method 2: flask run command
+  If using the command `flask run`, set the flask run port environment variable to port 8080 before the command (if you want to communicate with frontend).
   ```
   export FLASK_RUN_PORT=8080
   flask run
