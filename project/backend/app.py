@@ -45,6 +45,11 @@ def csv_json():
 def index():
     return redirect("/persons")
 
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def error(path):
+    return jsonify(500, "Internal Server Error") 
+
 @app.route("/persons", methods=["GET"])
 def persons():
     # Load data and hold it in json format / list of dictionaries
