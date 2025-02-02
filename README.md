@@ -12,6 +12,7 @@ This folder contains the solutions to the Leetcode problems for phase 1 of the a
 This folder contains the code to the project for phase 2 of the application process.
 
 ### project/backend
+  Deployed on **https://jrappdev.onrender.com/persons**.
   This folder contains all the backend code for the Flask server of the project.\
 - **make_csv.py**: Creates a .csv file named [persons.csv](https://github.com/sathvikparasa/JrAppDev/blob/main/project/backend/persons.csv) generating fake data (using Faker) for the backend.
 - **persons.csv**: Fake data generated from make_csv.py. Data includes a unique UUIDv4, first and last names, email, and a randomly generated salary between $0 and $1,000,000.
