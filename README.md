@@ -29,22 +29,24 @@ This folder contains the code to the project for phase 2 of the application proc
   ```
   pip install virtualenv
   virtualenv .env
-  source .env/Scripts/activate
+  source .env/bin/activate
   ```
   Then, install required dependencies with `pip`.
   ```
-  pip install requirements.txt
+  pip install -r requirements.txt
   ```
   Then run the application.
   ```
   python3 app.py
   ```
-  If using `flask run`, set the flask environment variable to port 8080 before (if you want to communicate with frontend).
+  If using the command `flask run`, set the flask environment variable to port 8080 before (if you want to communicate with frontend).
   ```
   export FLASK_RUN_PORT=8080
   flask run
   ```
-  Use curl or Postman to fetch request from the server.
+
+  On app startup, the default route will redirect you to /persons.
+  Use curl or Postman to fetch request from the server, e.g. `curl http://127.0.0.1:8080/persons`
   
   **Routes:**
   - `/persons/`: Fetch data for the first 10 people in persons.csv.
